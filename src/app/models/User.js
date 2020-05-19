@@ -12,7 +12,7 @@ class User extends Model {
 
       {
         freezeTableName: true,
-        tableName: 'user',
+        tableName: 'users',
         sequelize,
       }
     );
