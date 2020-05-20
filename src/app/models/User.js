@@ -11,7 +11,6 @@ class User extends Model {
         password_hash: Sequelize.STRING,
         provider: Sequelize.BOOLEAN,
       },
-
       {
         freezeTableName: true,
         tableName: 'users',
@@ -25,6 +24,10 @@ class User extends Model {
       }
     });
     return this;
+  }
+
+  checkPassword(password) {
+    return bcrypt.compare(password, this.password_hash);
   }
 }
 
